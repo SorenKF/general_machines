@@ -1,0 +1,32 @@
+# Dependencies for the genericity tagging + analysis pipeline.
+# Covers: run_tagger.py, generalization_metric.py, metric_validation.py,
+#         plotting.py, rst/*, and the Anecedotal_Discourse_Classifier_Multitext
+#         submodule (pipeline.py).
+#
+# After install, also fetch the spaCy model the tagger loads at import:
+#     python -m spacy download en_core_web_sm
+
+# --- data & numerics ---
+numpy==1.26.4
+pandas==2.2.3
+scipy
+
+# --- plotting ---
+matplotlib
+seaborn
+
+# --- tagging pipeline (submodule: Anecedotal_Discourse_Classifier_Multitext/pipeline.py) ---
+torch==2.2.0
+transformers==4.57.3
+spacy
+spacy-alignments
+wtpsplit            # sentence segmentation used in generalization_metric.py / metric_validation.py
+sty                 # colored terminal output in pipeline.py
+gradio<4            # imported at module top in pipeline.py (Gradio 3.x API)
+
+# --- I/O & reporting ---
+tabulate            # tables in rst/analysis_discourse_rels_*.py
+tqdm==4.66.5
+
+# --- optional: interactive web demo only (not needed to reproduce results) ---
+# flask             # Anecedotal_Discourse_Classifier_Multitext/app.py

@@ -1,0 +1,31 @@
+name: genericity
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  # --- data & numerics ---
+  - numpy=1.26.4
+  - pandas=2.2.3
+  - scipy
+  # --- plotting ---
+  - matplotlib
+  - seaborn
+  # --- I/O & reporting ---
+  - tabulate        # tables in code_rst/analysis_discourse_rels_*.py
+  - tqdm=4.66.5
+  - pip:
+      # --- tagging pipeline (submodule pipeline.py) ---
+      - torch==2.2.0
+      - transformers==4.57.3
+      - spacy
+      - spacy-alignments
+      - wtpsplit            # sentence segmentation (generalization_metric.py / metric_validation.py)
+      - sty                 # colored terminal output in pipeline.py
+      - gradio<4            # imported at module top in pipeline.py (Gradio 3.x API)
+      # --- optional: interactive web demo only (not needed to reproduce results) ---
+      # - flask             # Anecedotal_Discourse_Classifier_Multitext/app.py
+
+# After `conda env create -f env/environment.yml`, fetch the spaCy model:
+#     python -m spacy download en_core_web_sm
