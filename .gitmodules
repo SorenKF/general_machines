@@ -1,0 +1,3 @@
+[submodule "Anecedotal_Discourse_Classifier_Multitext"]
+	path = Anecedotal_Discourse_Classifier_Multitext
+	url = https://huggingface.co/spaces/BabakScrapes/Anecedotal_Discourse_Classifier_Multitext
