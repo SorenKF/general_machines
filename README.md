@@ -107,8 +107,7 @@ split-aware where a single `split` value is present.
 
 ### 3. Validate the metric — `metric_validation.py`
 
-Re-scores the dataset under alternative weighting schemes to show that the reported
-results are not an artifact of the chosen tag weights:
+Re-scores the dataset under alternative weighting schemes to examine the influence of the weighting scheme. We use it to compare our theoretically motivated weighting scheme with random, inverted and frequency-sensitive weighting:
 
 - leave-one-out **ablation** of each tag,
 - **uniform** weights (0.0 / 0.5 / 1.0),
